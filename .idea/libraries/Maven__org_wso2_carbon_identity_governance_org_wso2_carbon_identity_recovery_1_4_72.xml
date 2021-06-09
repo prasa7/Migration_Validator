@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.wso2.carbon.identity.governance:org.wso2.carbon.identity.recovery:1.4.72">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/governance/org.wso2.carbon.identity.recovery/1.4.72/org.wso2.carbon.identity.recovery-1.4.72.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/governance/org.wso2.carbon.identity.recovery/1.4.72/org.wso2.carbon.identity.recovery-1.4.72-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/governance/org.wso2.carbon.identity.recovery/1.4.72/org.wso2.carbon.identity.recovery-1.4.72-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

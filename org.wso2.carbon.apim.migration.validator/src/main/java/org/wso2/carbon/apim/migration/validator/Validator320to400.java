@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 public class Validator320to400 {
 
-    public static void validateTableCount()
+    public static String validateTableCount()
     {
         final Logger LOGGER = Logger.getLogger(Validator320to400.class.getName());
 
@@ -15,9 +15,11 @@ public class Validator320to400 {
 
         if(countValidator) {
             LOGGER.info("3.2.0 to 4.0.0 table count validation is successful.");
+            return "3.2.0 to 4.0.0 table count validation is successful.";
         }
         else {
             LOGGER.info("3.2.0 to 4.0.0 table count validation is fail.");
+            return "3.2.0 to 4.0.0 table count validation is fail.";
         }
 
     }

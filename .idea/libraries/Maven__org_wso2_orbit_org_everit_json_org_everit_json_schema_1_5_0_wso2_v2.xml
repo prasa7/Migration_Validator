@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.wso2.orbit.org.everit.json:org.everit.json.schema:1.5.0.wso2.v2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/orbit/org/everit/json/org.everit.json.schema/1.5.0.wso2.v2/org.everit.json.schema-1.5.0.wso2.v2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/orbit/org/everit/json/org.everit.json.schema/1.5.0.wso2.v2/org.everit.json.schema-1.5.0.wso2.v2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/orbit/org/everit/json/org.everit.json.schema/1.5.0.wso2.v2/org.everit.json.schema-1.5.0.wso2.v2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
