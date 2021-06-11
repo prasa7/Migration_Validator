@@ -79,6 +79,8 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+
     </build>
 
 
@@ -115,8 +117,15 @@
                 <artifactId>itextpdf</artifactId>
                 <version>5.5.8</version>
             </dependency>
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>pdfa</artifactId>
+                <version>7.1.15</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+
 
     <properties>
         <osgi.framework.imp.pkg.version.range>[1.7.0, 2.0.0)</osgi.framework.imp.pkg.version.range>
@@ -132,5 +141,6 @@
         </import.package>
         <dynamic.import.package>*</dynamic.import.package>
         <import.package.version.commons.logging>[1.2.0,2.0.0)</import.package.version.commons.logging>
+
     </properties>
 </project>

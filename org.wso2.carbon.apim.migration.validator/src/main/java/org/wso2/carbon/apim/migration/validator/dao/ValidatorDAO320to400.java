@@ -23,12 +23,17 @@ public class ValidatorDAO320to400 {
         //String sqlQuery = SQLConstants.GET_TABLE_COUNT;
         String result = "";
 
+       // APIMgtDBUtil.initialize();
+
         try {
             conn = APIMgtDBUtil.getConnection();
+           // conn.setAutoCommit(false);
             ps = conn.prepareStatement(sqlQuery);
             ps.setString(1, dbName);
             ps.setInt(2,tableCount);
             resultSet = ps.executeQuery();
+
+           // conn.commit();
 
             if(resultSet.next()) {
                 result = resultSet.getString("Result");

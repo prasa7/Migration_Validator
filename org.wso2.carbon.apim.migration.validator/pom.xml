@@ -14,6 +14,8 @@
     <packaging>bundle</packaging>
     <name>WSO2 Migration Validator</name>
 
+    <url>http://www.itextpdf.com/</url>
+
     <build>
         <plugins>
             <plugin>
@@ -40,17 +42,25 @@
                         <Export-Package>
                             !org.wso2.carbon.apim.migration.validator.internal,
                             org.wso2.carbon.apim.migration.validator.*,
-                            com.mysql.jdbc.Driver
+                            com.mysql.jdbc.Driver,
+                            com.itextpdf.text.*
                         </Export-Package>
                         <Import-Package>
                             org.osgi.framework; version="${osgi.framework.imp.pkg.version.range}",
                             org.osgi.service.component; version="${osgi.service.component.imp.pkg.version.range}",
                             com.mysql.jdbc.*;version="${mysql.import.version.range}",
                             org.apache.commons.logging.*; version="${import.package.version.commons.logging}",
-                            *;resolution:=optional
+                            *;resolution:=optional,
+                            com.itextpdf.text.*
                         </Import-Package>
                         <Embed-Dependency>*</Embed-Dependency>
-                        <_exportcontents>com.mysql.jdbc.*</_exportcontents>
+                        <_exportcontents>
+                            com.mysql.jdbc.*, com.itextpdf.text.*
+                        </_exportcontents>
+                        <group>
+                            <title>iText PDF/A</title>
+                            <packages>com.itextpdf.text*</packages>
+                        </group>
                     </instructions>
                 </configuration>
             </plugin>
@@ -64,6 +74,17 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+            <repository>
+                <id>itext-releases</id>
+                <name>iText Repository - releases</name>
+                <url>https://repo.itextsupport.com/releases</url>
+                <snapshots>
+                    <enabled>false</enabled>
+                </snapshots>
+            </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -94,6 +115,38 @@
             <artifactId>org.eclipse.osgi.services</artifactId>
             <version>3.3.100.v20130513-1956</version>
         </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>pdfa</artifactId>
+            <version>7.1.15</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>2.1.7</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+
     </dependencies>
 
 </project>

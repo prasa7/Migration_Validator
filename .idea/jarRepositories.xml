@@ -12,6 +12,11 @@
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="itext-releases" />
+      <option name="name" value="iText Repository - releases" />
+      <option name="url" value="https://repo.itextsupport.com/releases" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="wso2.snapshots" />
       <option name="name" value="WSO2 Snapshot Repository" />
       <option name="url" value="https://maven.wso2.org/nexus/content/repositories/snapshots/" />

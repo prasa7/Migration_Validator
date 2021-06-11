@@ -3,6 +3,8 @@ package org.wso2.carbon.apim.migration.validator.internal;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.wso2.carbon.apim.migration.validator.pdfgenerator.PDFDoc;
+
 import java.util.logging.Logger;
 import static org.wso2.carbon.apim.migration.validator.Validator320to400.*;
 
@@ -18,6 +20,9 @@ public class ServiceComponent {
     protected void activate(ComponentContext context) {
 
         validateTableCount();
+
+        PDFDoc pdf= new PDFDoc();
+        pdf.pdfCreate();
 
         LOGGER.info("***********************************************************************************************************************************");
         LOGGER.info("*****************************************************NADISHA MADHUSHANIE******************************************************************************");
