@@ -15,7 +15,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.felix:org.apache.felix.scr.ds-annotations:1.2.8" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.osgi:org.eclipse.osgi.services:3.3.100.v20130513-1956" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.osgi:org.eclipse.osgi:3.9.1.v20130814-1242" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.49" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:6.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.carbon.apimgt:org.wso2.carbon.apimgt.impl:9.0.174" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.carbon.analytics-common:org.wso2.carbon.event.output.adapter.core:5.2.34" level="project" />
     <orderEntry type="library" name="Maven: xerces:xercesImpl:2.12.0" level="project" />
