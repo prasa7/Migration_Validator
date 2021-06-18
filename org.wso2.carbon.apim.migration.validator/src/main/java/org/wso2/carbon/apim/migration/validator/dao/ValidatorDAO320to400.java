@@ -32,6 +32,9 @@ public class ValidatorDAO320to400 {
 
             System.out.println(result);
 
+            ps.close();
+            conn.close();
+
         } catch (SQLException e) {
             //TODO
             System.out.println(e.getMessage());
@@ -48,6 +51,7 @@ public class ValidatorDAO320to400 {
         }
 
     }
+
 //2
     public boolean validateAPIMDbRevisionCreation() {
         String result = " ";
@@ -212,8 +216,8 @@ public boolean checkTableExits(String dbName,String tableName) {
 
 }
 
-
 /*
+
 import java.sql.*;
 
 public class ValidatorDAO320to400 {
@@ -405,4 +409,5 @@ public class ValidatorDAO320to400 {
     }
 
 }
+
 */
