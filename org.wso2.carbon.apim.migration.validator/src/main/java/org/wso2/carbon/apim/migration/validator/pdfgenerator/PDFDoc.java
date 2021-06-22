@@ -38,10 +38,10 @@ public class PDFDoc {
                 LOGGER.info(uuid_column_validation);
 
 
-                String[] methods = {Validator320to400.checkTableExits1(),Validator320to400.checkTableExits2(),Validator320to400.checkTableExits3(),Validator320to400.checkTableExits4(),Validator320to400.checkTableExits5(),Validator320to400.checkTableExits6(),Validator320to400.checkTableExits7(),Validator320to400.checkTableExits8(),Validator320to400.checkTableExits9(),Validator320to400.checkTableExits10(),Validator320to400.checkTableExits11(),Validator320to400.checkTableExits12(),Validator320to400.checkTableExits13(),Validator320to400.checkTableExits14(),Validator320to400.checkTableExits15(),Validator320to400.checkTableExits16(),Validator320to400.checkTableExits17(),Validator320to400.checkTableExits18(),Validator320to400.checkTableExits19()};
+                String[] methods = {Validator320to400.checkTableExits1(),Validator320to400.checkTableExits2(),Validator320to400.checkTableExits3(),Validator320to400.checkTableExits4(),Validator320to400.checkTableExits5(),Validator320to400.checkTableExits6(),Validator320to400.checkTableExits7(),Validator320to400.checkTableExits8(),Validator320to400.checkTableExits9(),Validator320to400.checkTableExits10(),Validator320to400.checkTableExits11(),Validator320to400.checkTableExits12(),Validator320to400.checkTableExits13(),Validator320to400.checkTableExits14(),Validator320to400.checkTableExits15(),Validator320to400.checkTableExits16(),Validator320to400.checkTableExits17(),Validator320to400.checkTableExits18(),Validator320to400.checkTableExits19(),Validator320to400.checkTableExits20()};
                 String[] table_exits = new String[100];
 
-                for(int i=0;i<19;i++)
+                for(int i=0;i<20;i++)
                 {
                          table_exits[i+1] = methods[i];
                          LOGGER.info(table_exits[i+1]);
@@ -76,7 +76,7 @@ public class PDFDoc {
                 table.addCell(uuid_column_validation);
 
                 //5
-                for(int i=0;i<19;i++)
+                for(int i=0;i<20;i++)
                 {
                         table.addCell(table_exits[i+1]);
                 }

@@ -11,7 +11,7 @@ public class Validator320to400 {
         final Logger LOGGER = Logger.getLogger(Validator320to400.class.getName());
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean countValidator = validate.validateAPIMDbTableCount(176,"apim_db");
+        boolean countValidator = validate.validateAPIMDbTableCount(177,"apim_db");
 
         if(countValidator) {
             return " * 3.2.0 to 4.0.0 table count validation is successful.";
@@ -452,6 +452,20 @@ public class Validator320to400 {
         }
         else {
             return "3.2.0 to 4.0.0 IDN_USER_FUNCTIONALITY_PROPERTY table validation is fail.";
+        }
+
+    }
+
+    public static String checkTableExits20() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean tableExits = validate.checkTableExits("apim_db","AM_API_REVISION_METADATA");
+
+        if(tableExits) {
+            return " * 3.2.0 to 4.0.0 AM_API_REVISION_METADATA table validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 AM_API_REVISION_METADATA table validation is fail.";
         }
 
     }

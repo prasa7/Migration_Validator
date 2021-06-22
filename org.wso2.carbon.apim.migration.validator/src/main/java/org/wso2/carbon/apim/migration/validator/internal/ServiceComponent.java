@@ -12,29 +12,21 @@ import org.osgi.service.component.annotations.ReferencePolicy;
 import org.wso2.carbon.apimgt.api.APIManagerDatabaseException;
 import org.wso2.carbon.apimgt.impl.APIManagerConfigurationService;
 import org.wso2.carbon.apimgt.impl.utils.APIMgtDBUtil;
-
 import org.wso2.carbon.apim.migration.validator.pdfgenerator.PDFDoc;
 import static org.wso2.carbon.apim.migration.validator.Validator320to400.*;
-
-
 @Component(
         name = "apim.migration.validator",
         immediate = true
 )
-
 public class ServiceComponent {
     private static final Log log = LogFactory.getLog(ServiceComponent.class.getName());
-
     @Activate
     protected void activate(ComponentContext context) {
-
         //try {
         //    APIMgtDBUtil.initialize();
             validateTableCount();
-
             PDFDoc pdf = new PDFDoc();
             pdf.pdfCreate();
-
             log.info("***********************************************************************************************************************************");
             log.info("*****************************************************NADISHA MADHUSHANIE******************************************************************************");
             log.info("***********************************************************************************************************************************");
@@ -43,13 +35,10 @@ public class ServiceComponent {
         //    log.info("database initialization failed");
         //}
     }
-
     @Deactivate
     protected void deactivate(ComponentContext context) {
-
         log.info("service component is deactivated");
     }
-
     /*
     @Reference(
             name = "api.manager.config.service",
@@ -61,12 +50,10 @@ public class ServiceComponent {
         log.debug("API manager configuration service bound to Tenant Initializer.");
         ServiceDataHolder.getInstance().setAPIManangerConfigurationService(service);
     }
-
     protected void unsetAPIManangerConfigurationService(APIManagerConfigurationService service){
         log.debug("API manager configuration service unbound from Tenant Initializer.");
         ServiceDataHolder.getInstance().setAPIManangerConfigurationService(null);
     }
-
      */
 
 /*}*/
@@ -85,6 +72,8 @@ import org.wso2.carbon.apimgt.impl.APIManagerConfigurationService;
 import org.wso2.carbon.apimgt.impl.utils.APIMgtDBUtil;
 import org.wso2.carbon.core.ServerStartupObserver;
 import org.wso2.carbon.apim.migration.validator.pdfgenerator.PDFDoc;
+import org.wso2.carbon.user.core.service.RealmService;
+
 import static org.wso2.carbon.apim.migration.validator.Validator320to400.*;
 
 
@@ -93,9 +82,11 @@ import static org.wso2.carbon.apim.migration.validator.Validator320to400.*;
         immediate = true
 )
 public class ServiceComponent implements ServerStartupObserver{
+//public class ServiceComponent{
 
     private static final Log log = LogFactory.getLog(ServiceComponent.class);
     private static APIManagerConfigurationService amConfigurationService;
+    private RealmService realmService;
 
     @Override
     public void completingServerStartup() {
@@ -113,8 +104,11 @@ public class ServiceComponent implements ServerStartupObserver{
     }
 
     @Activate
-    protected void activate(ComponentContext context) {
+    protected void activate(ComponentContext context)
+            //throws APIManagerDatabaseException
+    {
 
+       // APIMgtDBUtil.initialize();
         validateTableCount();
 
         PDFDoc pdf = new PDFDoc();
@@ -132,6 +126,24 @@ public class ServiceComponent implements ServerStartupObserver{
             log.debug("AddNewUserOperationEventListener is deactivated ");
         }
     }
+
+    @Reference(
+            name = "realm.service",
+            service = RealmService.class,
+            cardinality = ReferenceCardinality.MANDATORY,
+            policy = ReferencePolicy.DYNAMIC,
+            unbind = "unsetRealmService"
+    )
+    protected void setRealmService(RealmService realmService) {
+
+        this.realmService = realmService;
+    }
+
+    protected void unsetRealmService(RealmService realmService) {
+
+        this.realmService = null;
+    }
+
 /*
     @Reference(
             name = "api.manager.config.service",
@@ -146,21 +158,14 @@ public class ServiceComponent implements ServerStartupObserver{
         }
         this.amConfigurationService = amConfigurationService;
     }
-
     protected void unsetAPIManagerConfigurationService(APIManagerConfigurationService amConfigurationService) {
         if (log.isDebugEnabled()) {
             log.debug("UnSetting the APIManagerConfiguration Service");
         }
         this.amConfigurationService = null;
     }
-
     public static APIManagerConfigurationService getAPIManagerConfigurationService() {
         return amConfigurationService;
     }*/
 
 }
-
-
-
-
-

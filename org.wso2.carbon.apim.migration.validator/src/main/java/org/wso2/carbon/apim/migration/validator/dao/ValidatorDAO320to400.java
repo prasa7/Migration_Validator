@@ -6,6 +6,8 @@ import java.util.List;
 import org.wso2.carbon.apimgt.impl.utils.APIMgtDBUtil;
 
 public class ValidatorDAO320to400 {
+
+
     //1
     public boolean validateAPIMDbTableCount(int tableCount, String dbName) {
 
@@ -35,7 +37,8 @@ public class ValidatorDAO320to400 {
             ps.close();
             conn.close();
 
-        } catch (SQLException e) {
+        } //catch (SQLException | APIManagerDatabaseException e) {
+       catch (SQLException e){
             //TODO
             System.out.println(e.getMessage());
 

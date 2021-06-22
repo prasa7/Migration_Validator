@@ -4,7 +4,7 @@ public class SQLConstants {
 
     /*api-m 4.0.0 apim_db*/
 
-    /*table count should be equal to 176    1-apim_db , 2-176*/
+    /*table count should be equal to 177    1-apim_db , 2-176*/
     public static String GET_TABLE_COUNT = "SELECT  CASE WHEN (SELECT count(*) AS TOTAL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = ? )=(?) THEN 'true' ELSE 'false' END AS Result;";
 
     /*In AM_API table, if status is published , revision should be created      1-apim_db.AM_API , 2-apim_db.AM_API*/
@@ -54,6 +54,7 @@ public class SQLConstants {
         1-'apim_db' , 2-'IDN_REMOTE_FETCH_REVISIONS'
         1-'apim_db' , 2-'IDN_USER_FUNCTIONALITY_MAPPING'
         1-'apim_db' , 2-'IDN_USER_FUNCTIONALITY_PROPERTY'
+        1-'apim_db' , 2-'AM_API_REVISION_METADATA'
     */
     public static String CHECK_TABLES_EXITS ="SELECT CASE WHEN (select count(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?)=(1) THEN 'true' ELSE 'false' END AS Result;";
 }
