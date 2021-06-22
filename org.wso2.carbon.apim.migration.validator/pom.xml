@@ -33,34 +33,22 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.5.3</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <private-package>org.wso2.carbon.apim.migration.validator.internal</private-package>
-                        <Export-Package>
-                            !org.wso2.carbon.apim.migration.validator.internal,
-                            org.wso2.carbon.apim.migration.validator.*,
-                            com.mysql.jdbc.Driver,
-                            com.itextpdf.text.*
-                        </Export-Package>
+                        <private-package>
+                            org.wso2.carbon.apim.migration.validator.internal
+                        </private-package>
                         <Import-Package>
-                            org.osgi.framework; version="${osgi.framework.imp.pkg.version.range}",
-                            org.osgi.service.component; version="${osgi.service.component.imp.pkg.version.range}",
-                            com.mysql.jdbc.*;version="${mysql.import.version.range}",
-                            org.apache.commons.logging.*; version="${import.package.version.commons.logging}",
-                            *;resolution:=optional,
-                            com.itextpdf.text.*
+                            org.apache.commons.logging.*,
+                            org.wso2.carbon.registry.core.*,
+                            org.wso2.carbon.apimgt.impl,
+                            *;resolution:=optional
                         </Import-Package>
-                        <Embed-Dependency>*</Embed-Dependency>
-                        <_exportcontents>
-                            com.mysql.jdbc.*, com.itextpdf.text.*
-                        </_exportcontents>
-                        <group>
-                            <title>iText PDF/A</title>
-                            <packages>com.itextpdf.text*</packages>
-                        </group>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -76,14 +64,14 @@
     </build>
 
     <repositories>
-            <repository>
-                <id>itext-releases</id>
-                <name>iText Repository - releases</name>
-                <url>https://repo.itextsupport.com/releases</url>
-                <snapshots>
-                    <enabled>false</enabled>
-                </snapshots>
-            </repository>
+        <repository>
+            <id>itext-releases</id>
+            <name>iText Repository - releases</name>
+            <url>https://repo.itextsupport.com/releases</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -108,7 +96,7 @@
         <dependency>
             <groupId>org.wso2.carbon.apimgt</groupId>
             <artifactId>org.wso2.carbon.apimgt.impl</artifactId>
-            <version>9.0.174</version>
+            <version>${carbon.apimgt.version}</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.osgi</groupId>
@@ -173,5 +161,12 @@
         </dependency>
 
     </dependencies>
+
+    <properties>
+        <carbon.apimgt.version>9.0.174</carbon.apimgt.version>
+        <carbon.governance.version>4.8.19</carbon.governance.version>
+        <carbon.kernel.version>4.6.1</carbon.kernel.version>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+    </properties>
 
 </project>
